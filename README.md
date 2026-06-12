@@ -5,6 +5,7 @@ colorFrom: indigo
 colorTo: purple
 sdk: streamlit
 sdk_version: 1.35.0
+python_version: 3.11
 app_file: app.py
 pinned: false
 ---
@@ -74,19 +75,6 @@ pinned: false
                         └── Gather & Rank ──> Gemini 3.5 Flash (Executive Synthesis)
 ```
 
----
-
-## 🛠️ Key Technical Challenges Solved (Production Engineering)
-
-To bring this project to a production-ready state, several integration hurdles were successfully debugged:
-
-* **LangGraph State Merging (`InvalidUpdateError`)**: In parallel workflows (fan-out), returning full state dictionaries causes key collisions on merge (fan-in). We refactored parallel nodes in `src/rag_pipeline.py` to return only their specific output key modifications, allowing LangGraph to merge states safely.
-* **API Version Lock & Deprecations**: 
-  - Upgraded models from deprecated Gemini 1.5 to **Gemini 3.5 Flash** (supporting fast vision captioning and final answer generation).
-  - Swapped decommissioned Groq Llama 3 models with **Llama 3.1 8B Instant** and **Llama 3.3 70B Versatile** to prevent API routing failures.
-* **Client Constructor Conflicts**: Newer versions of `httpx` (0.28.0+) removed the `proxies` parameter in the client constructor, causing `ChatGroq` initializations to crash. Pinned `httpx==0.27.2` in `requirements.txt` to guarantee compatibility.
-* **Platform Dependency Compilation**: Scientfic packages (like `numpy`, `chromadb`) fail compiler builds on Python 3.14. Resolved by locking local environments and Hugging Face builders to Python 3.11/3.12.
-* **Telemetry Control**: Disabled anonymous telemetry logging in ChromaDB using environment flags to reduce terminal noise and speed up startup times.
 
 ---
 
