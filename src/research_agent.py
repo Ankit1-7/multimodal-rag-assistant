@@ -82,7 +82,7 @@ def node_refine_query(state: ResearchState) -> ResearchState:
     """Use Groq to extract a clean topic and ML-focused search terms."""
     try:
         from src.llm_clients import get_groq_llm, call_llm
-        llm = get_groq_llm(state["groq_api_key"], model="llama-3.1-8b-instant")
+        llm = get_groq_llm(state["groq_api_key"], model="gpt-oss-20b")
         if llm:
             prompt = (
                 f"Extract the core ML/AI/Data Science topic from this query. "

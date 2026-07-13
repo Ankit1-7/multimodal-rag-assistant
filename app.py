@@ -236,35 +236,24 @@ st.markdown("""
 
 def render_sidebar(keys: dict):
     with st.sidebar:
-        # 1. Classy Profile Card (Personalized)
-        st.markdown("## 👤 Developer Profile")
+        # 1. Platform Information Card (Generalized)
+        st.markdown("## 🧠 Platform Info")
         st.markdown(
             f"""
             <div class="profile-card">
-                <h3>Ankit Yadav</h3>
-                <p><b> ECE Final Year student</b></p>
+                <h3>InsightEngine</h3>
+                <p><b>Multimodal RAG & AI Agent</b></p>
                 <p style="font-size: 0.82rem; color: #94a3b8; display: flex; align-items: center; gap: 4px;">
-                    📍 NSUT, Delhi
+                    ⚡ Production-grade AI Assistant
                 </p>
                 <p style="font-size: 0.82rem; line-height: 1.4; color: #cbd5e1; margin-top: 0.5rem; margin-bottom: 0.8rem;">
-                    Building production-grade agentic AI systems, multimodal RAG search pipelines, and graph-orchestrated workflows.
+                    A unified intelligence system integrating multi-vector document reasoning (RAG) and graph-orchestrated parallel search agents.
                 </p>
                 <div style="margin-bottom: 0.8rem;">
                     <span class="profile-badge">Python</span>
                     <span class="profile-badge">LangGraph</span>
                     <span class="profile-badge">ChromaDB</span>
                     <span class="profile-badge">LLMs</span>
-                </div>
-                <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.6rem; display: flex; flex-direction: column; gap: 2px;">
-                    <a href="https://github.com/Ankit1-7" target="_blank" class="profile-link">
-                        💻 GitHub Profile
-                    </a>
-                    <a href="https://www.linkedin.com/in/ankit-71-yadav/" target="_blank" class="profile-link">
-                        🔗 LinkedIn Connection
-                    </a>
-                    <a href="mailto:ankit712006@gmail.com" class="profile-link">
-                        📧 Gmail
-                    </a>
                 </div>
             </div>
             """,

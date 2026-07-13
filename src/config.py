@@ -38,7 +38,7 @@ def get_config() -> dict:
 
 # Model settings
 GROQ_MODEL = "llama-3.3-70b-versatile"   # Powerful, 14k req/day free
-GROQ_FAST_MODEL = "llama-3.1-8b-instant" # Fast model for routing/classification
+GROQ_FAST_MODEL = "gpt-oss-20b" # Fast model for routing/classification
 GEMINI_MODEL = "gemini-3.5-flash"       # For final answer generation
 
 # ChromaDB settings

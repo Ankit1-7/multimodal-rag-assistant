@@ -115,7 +115,7 @@ def node_process_tables(state: RAGState) -> dict:
     try:
         from src.indexer import process_tables, index_tables
         from src.llm_clients import get_groq_llm
-        groq_llm = get_groq_llm(state["groq_api_key"], model="llama-3.1-8b-instant")
+        groq_llm = get_groq_llm(state["groq_api_key"], model="gpt-oss-20b")
         table_data = process_tables(state["tables"], groq_llm, state["doc_name"])
         count = index_tables(table_data, state["doc_name"])
         return {"table_data": table_data, "table_count": count}
@@ -131,7 +131,7 @@ def node_route_query(state: RAGState) -> RAGState:
     try:
         from src.query_router import classify_query, QueryType
         from src.llm_clients import get_groq_llm
-        groq_llm = get_groq_llm(state["groq_api_key"], model="llama-3.1-8b-instant")
+        groq_llm = get_groq_llm(state["groq_api_key"], model="gpt-oss-20b")
         query_types = classify_query(state["query"], groq_llm)
         state["query_types"] = query_types
     except Exception as e:
