@@ -21,7 +21,7 @@ pinned: false
 
 ---
 
-🤗 **Live Demo:** [Hugging Face Space Demo](https://huggingface.co/spaces/Ankit1-7/multimodal-rag-research-assistant)  
+🤗 **Live Demo:** [Hugging Face Space Demo](https://huggingface.co/spaces/sgncoc/multimodal-rag-assistant)  
 👤 **Author:** [Ankit Yadav](https://github.com/Ankit1-7) · [LinkedIn Connection](https://www.linkedin.com/in/ankit-71-yadav/) · [Email](mailto:ankit712006@gmail.com)  
 
 ---
